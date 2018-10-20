@@ -1,0 +1,52 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector()[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 3 initial tasks for 3 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.derivative.DeriveSpec, sbt.ForkMain$SubclassFingerscan@1b4c3712, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDeriveSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mmatches[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- should recognize strings in the language 1 (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- should not recognize strings not in the language 1 (pending)[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 2 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.range_set.RangeSetSpec, sbt.ForkMain$SubclassFingerscan@452332e5, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mRangeSetSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32ma range set[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be constructable with arbitrary type-correct inputs 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be constructable with arbitrary type-correct inputs 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be constructable with arbitrary type-correct inputs 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set union correctly 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set union correctly 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set union correctly 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set intersection correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set intersection correctly 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set complement correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should compute set equality correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should handle extreme ranges correctly[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 11 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.RegexSpec, sbt.ForkMain$SubclassFingerscan@493e4a8d, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mRegexSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31medu.ucsb.cs.cs162.regex.RegexSpec *** ABORTED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:284)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at edu.ucsb.cs.cs162.regex.package$RegexBuilder$.$plus$extension(RichRegex.scala:36)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at edu.ucsb.cs.cs162.regex.RegexSpec.<init>(RegexSpec.scala:16)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.Class.newInstance(Unknown Source)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:435)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at sbt.ForkMain$Run.lambda$runTest$1(ForkMain.java:304)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 108 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 11[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 11, failed 0, canceled 0, ignored 0, pending 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 SUITE ABORTED ***[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.ucsb.cs.cs162.range_set.RangeSetSpec[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.ucsb.cs.cs162.regex.derivative.DeriveSpec[0m
+[0m[[0m[31merror[0m] [0m[0mError during tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	edu.ucsb.cs.cs162.regex.RegexSpec[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

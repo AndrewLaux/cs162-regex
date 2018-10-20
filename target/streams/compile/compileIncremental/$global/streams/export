@@ -1,0 +1,1 @@
+scalac -deprecation -feature -classpath C:\Users\Castle\Documents\Classes\cs162\cs162-regex\target\scala-2.12\classes -bootclasspath C:\Users\Castle\.sbt\boot\scala-2.12.6\lib\scala-library.jar C:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala

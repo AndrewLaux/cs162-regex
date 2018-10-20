@@ -14,7 +14,7 @@ object `package` {
 
     // Concatenate 're' with 'other', simplifying if possible (assumes that 're'
     // and 'other' have already been simplified).
-    def ~(other: Regex): Regex = ???
+    def ~(other: Regex): Regex = return Concatenate(re, other)
 
     // Union 're' with 'other', simplifying if possible (assumes that 're' and
     // 'other' have already been simplified).

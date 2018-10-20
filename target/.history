@@ -1,0 +1,7 @@
+sbt
+test
+sbt test-only src/test/scala/RegexSpec*
+test-only edu.ucsb.cs.cs162.regex.RegexSpec
+test-only: edu.ucsb.cs.cs162.regex.RegexSpec
+test-only  edu.ucsb.cs.cs162.regex.RegexSpec*
+testOnly edu.ucsb.cs.cs162.regex.RegexSpec*
