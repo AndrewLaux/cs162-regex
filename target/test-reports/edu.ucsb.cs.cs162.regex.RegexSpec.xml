@@ -1,26 +1,153 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite hostname="DESKTOP-FP8M2RQ" name="edu.ucsb.cs.cs162.regex.RegexSpec" tests="1" errors="1" failures="0" skipped="0" time="0.019" timestamp="2018-10-20T13:55:04">
+<testsuite hostname="DESKTOP-FP8M2RQ" name="edu.ucsb.cs.cs162.regex.RegexSpec" tests="24" errors="0" failures="2" skipped="2" time="0.038" timestamp="2018-10-21T20:08:27">
                      <properties>
       <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/><property name="java.specification.version" value="10"/><property name="sun.cpu.isalist" value="amd64"/><property name="sun.jnu.encoding" value="Cp1252"/><property name="sbt.log.format" value="true"/><property name="sun.arch.data.model" value="64"/><property name="java.vendor.url" value="http://java.oracle.com/"/><property name="sun.boot.library.path" value="C:\Program Files\Java\jre-10.0.2\bin"/><property name="sun.java.command" value="xsbt.boot.Boot"/><property name="jdk.debug" value="release"/><property name="sun.stderr.encoding" value="cp437"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="java.version.date" value="2018-07-17"/><property name="java.home" value="C:\Program Files\Java\jre-10.0.2"/><property name="file.separator" value="\"/><property name="java.vm.compressedOopsMode" value="32-bit"/><property name="line.separator" value="
-"/><property name="sun.stdout.encoding" value="cp437"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="user.script" value=""/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="java.runtime.version" value="10.0.2+13"/><property name="user.name" value="Castle"/><property name="file.encoding" value="Cp1252"/><property name="jnidispatch.path" value="C:\Users\Castle\AppData\Local\Temp\jna-2011275544\jna7407943628254603883.dll"/><property name="java.vendor.version" value="18.3"/><property name="jna.loaded" value="true"/><property name="java.io.tmpdir" value="C:\Users\Castle\AppData\Local\Temp\"/><property name="java.version" value="10.0.2"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="sun.os.patch.level" value=""/><property name="java.library.path" value="C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\CMake\bin;%GOOGLE_APPLICATION_CREDNTIALS%;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;c:\users\castle\appdata\local\programs\python\python36\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\sbt\bin;C:\Users\Castle\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Castle\AppData\Local\Programs\Python\Python36\;C:\Users\Castle\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jre1.8.0_171;;."/><property name="java.vendor" value="Oracle Corporation"/><property name="scala.ext.dirs" value="C:\Users\Castle\.sbt\0.13\java9-rt-ext-oracle_corporation_10_0_2"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.desktop" value="windows"/><property name="file.encoding.pkg" value="sun.io"/><property name="java.class.path" value="C:\Program Files (x86)\sbt\bin\sbt-launch.jar"/><property name="java.vm.vendor" value="&quot;Oracle Corporation&quot;"/><property name="user.variant" value=""/><property name="jline.shutdownhook" value="false"/><property name="user.timezone" value="America/Los_Angeles"/><property name="os.name" value="Windows 10"/><property name="java.vm.specification.version" value="10"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="user.country" value="US"/><property name="sun.cpu.endian" value="little"/><property name="user.home" value="C:\Users\Castle"/><property name="user.language" value="en"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="jline.esc.timeout" value="0"/><property name="path.separator" value=";"/><property name="os.version" value="10.0"/><property name="jna.nosys" value="true"/><property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/><property name="user.dir" value="C:\Users\Castle\Documents\Classes\cs162\cs162-regex"/><property name="os.arch" value="amd64"/><property name="java.vm.info" value="mixed mode"/><property name="java.vm.version" value="10.0.2+13"/><property name="java.class.version" value="54.0"/>
+"/><property name="sun.stdout.encoding" value="cp437"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="user.script" value=""/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="java.runtime.version" value="10.0.2+13"/><property name="user.name" value="Castle"/><property name="file.encoding" value="Cp1252"/><property name="jnidispatch.path" value="C:\Users\Castle\AppData\Local\Temp\jna-2011275544\jna4159990201860527200.dll"/><property name="java.vendor.version" value="18.3"/><property name="jna.loaded" value="true"/><property name="java.io.tmpdir" value="C:\Users\Castle\AppData\Local\Temp\"/><property name="java.version" value="10.0.2"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="sun.os.patch.level" value=""/><property name="java.library.path" value="C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\CMake\bin;%GOOGLE_APPLICATION_CREDNTIALS%;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;c:\users\castle\appdata\local\programs\python\python36\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\sbt\bin;C:\Users\Castle\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Castle\AppData\Local\Programs\Python\Python36\;C:\Users\Castle\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jre1.8.0_171;;."/><property name="java.vendor" value="Oracle Corporation"/><property name="scala.ext.dirs" value="C:\Users\Castle\.sbt\0.13\java9-rt-ext-oracle_corporation_10_0_2"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.desktop" value="windows"/><property name="file.encoding.pkg" value="sun.io"/><property name="java.class.path" value="C:\Program Files (x86)\sbt\bin\sbt-launch.jar"/><property name="java.vm.vendor" value="&quot;Oracle Corporation&quot;"/><property name="user.variant" value=""/><property name="jline.shutdownhook" value="false"/><property name="user.timezone" value="America/Los_Angeles"/><property name="os.name" value="Windows 10"/><property name="java.vm.specification.version" value="10"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="user.country" value="US"/><property name="sun.cpu.endian" value="little"/><property name="user.home" value="C:\Users\Castle"/><property name="user.language" value="en"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="jline.esc.timeout" value="0"/><property name="path.separator" value=";"/><property name="os.version" value="10.0"/><property name="jna.nosys" value="true"/><property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/><property name="user.dir" value="C:\Users\Castle\Documents\Classes\cs162\cs162-regex"/><property name="os.arch" value="amd64"/><property name="java.vm.info" value="mixed mode"/><property name="java.vm.version" value="10.0.2+13"/><property name="java.class.version" value="54.0"/>
     </properties>
-                     <testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="(It is not a test it is a sbt.testing.SuiteSelector)" time="0.019">
-                                                 <error message="scala.NotImplementedError: an implementation is missing" type="sbt.ForkMain$ForkError">sbt.ForkMain$ForkError: scala.NotImplementedError: an implementation is missing
-	at scala.Predef$.$qmark$qmark$qmark(Predef.scala:284)
-	at edu.ucsb.cs.cs162.regex.package$RegexBuilder$.$plus$extension(RichRegex.scala:36)
-	at edu.ucsb.cs.cs162.regex.RegexSpec.&lt;init&gt;(RegexSpec.scala:16)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at java.base/java.lang.Class.newInstance(Unknown Source)
-	at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:435)
+                     <testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `~`" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `|`" time="0.013">
+                                                 <failure message="org.scalatest.exceptions.TestFailedException: ((a,c) | (c,f)) did not equal (a,f)" type="sbt.ForkMain$ForkError">sbt.ForkMain$ForkError: org.scalatest.exceptions.TestFailedException: ((a,c) | (c,f)) did not equal (a,f)
+	at org.scalatest.MatchersHelper$.indicateFailure(MatchersHelper.scala:346)
+	at org.scalatest.Matchers$ShouldMethodHelper$.shouldMatcher(Matchers.scala:6668)
+	at org.scalatest.Matchers$AnyShouldWrapper.should(Matchers.scala:6716)
+	at edu.ucsb.cs.cs162.regex.RegexSpec.$anonfun$new$2(RegexSpec.scala:40)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FlatSpecLike$$anon$1.apply(FlatSpecLike.scala:1682)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at org.scalatest.FlatSpec.withFixture(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.invokeWithFixture$1(FlatSpecLike.scala:1680)
+	at org.scalatest.FlatSpecLike.$anonfun$runTest$1(FlatSpecLike.scala:1692)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:289)
+	at org.scalatest.FlatSpecLike.runTest(FlatSpecLike.scala:1692)
+	at org.scalatest.FlatSpecLike.runTest$(FlatSpecLike.scala:1674)
+	at org.scalatest.FlatSpec.runTest(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.$anonfun$runTests$1(FlatSpecLike.scala:1750)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:396)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:373)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:410)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:379)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:461)
+	at org.scalatest.FlatSpecLike.runTests(FlatSpecLike.scala:1750)
+	at org.scalatest.FlatSpecLike.runTests$(FlatSpecLike.scala:1749)
+	at org.scalatest.FlatSpec.runTests(FlatSpec.scala:1685)
+	at org.scalatest.Suite.run(Suite.scala:1147)
+	at org.scalatest.Suite.run$(Suite.scala:1129)
+	at org.scalatest.FlatSpec.org$scalatest$FlatSpecLike$$super$run(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.$anonfun$run$1(FlatSpecLike.scala:1795)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:521)
+	at org.scalatest.FlatSpecLike.run(FlatSpecLike.scala:1795)
+	at org.scalatest.FlatSpecLike.run$(FlatSpecLike.scala:1793)
+	at org.scalatest.FlatSpec.run(FlatSpec.scala:1685)
+	at org.scalatest.tools.Framework.org$scalatest$tools$Framework$$runSuite(Framework.scala:314)
+	at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:507)
 	at sbt.ForkMain$Run.lambda$runTest$1(ForkMain.java:304)
 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.base/java.lang.Thread.run(Unknown Source)
-</error>
+</failure>
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `*`" time="0.002">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `!`" time="0.002">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `&amp;`" time="0.002">
+                                                 <failure message="org.scalatest.exceptions.TestFailedException: ((a,d) &amp; (c,f)) did not equal (c,d)" type="sbt.ForkMain$ForkError">sbt.ForkMain$ForkError: org.scalatest.exceptions.TestFailedException: ((a,d) &amp; (c,f)) did not equal (c,d)
+	at org.scalatest.MatchersHelper$.indicateFailure(MatchersHelper.scala:346)
+	at org.scalatest.Matchers$ShouldMethodHelper$.shouldMatcher(Matchers.scala:6668)
+	at org.scalatest.Matchers$AnyShouldWrapper.should(Matchers.scala:6716)
+	at edu.ucsb.cs.cs162.regex.RegexSpec.$anonfun$new$5(RegexSpec.scala:69)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FlatSpecLike$$anon$1.apply(FlatSpecLike.scala:1682)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at org.scalatest.FlatSpec.withFixture(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.invokeWithFixture$1(FlatSpecLike.scala:1680)
+	at org.scalatest.FlatSpecLike.$anonfun$runTest$1(FlatSpecLike.scala:1692)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:289)
+	at org.scalatest.FlatSpecLike.runTest(FlatSpecLike.scala:1692)
+	at org.scalatest.FlatSpecLike.runTest$(FlatSpecLike.scala:1674)
+	at org.scalatest.FlatSpec.runTest(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.$anonfun$runTests$1(FlatSpecLike.scala:1750)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:396)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:373)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:410)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:379)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:461)
+	at org.scalatest.FlatSpecLike.runTests(FlatSpecLike.scala:1750)
+	at org.scalatest.FlatSpecLike.runTests$(FlatSpecLike.scala:1749)
+	at org.scalatest.FlatSpec.runTests(FlatSpec.scala:1685)
+	at org.scalatest.Suite.run(Suite.scala:1147)
+	at org.scalatest.Suite.run$(Suite.scala:1129)
+	at org.scalatest.FlatSpec.org$scalatest$FlatSpecLike$$super$run(FlatSpec.scala:1685)
+	at org.scalatest.FlatSpecLike.$anonfun$run$1(FlatSpecLike.scala:1795)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:521)
+	at org.scalatest.FlatSpecLike.run(FlatSpecLike.scala:1795)
+	at org.scalatest.FlatSpecLike.run$(FlatSpecLike.scala:1793)
+	at org.scalatest.FlatSpec.run(FlatSpec.scala:1685)
+	at org.scalatest.tools.Framework.org$scalatest$tools$Framework$$runSuite(Framework.scala:314)
+	at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:507)
+	at sbt.ForkMain$Run.lambda$runTest$1(ForkMain.java:304)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+</failure>
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `^`" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `&gt;=`" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `&lt;=`" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using `&lt;=&gt;`" time="0.002">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 1" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 2" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 3" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 4" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 5" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 6" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 7" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 8" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 9" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 10" time="0.0">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable using convenience methods 11" time="0.001">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should be buildable from strings" time="0.005">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="a regex should pretty-print correctly" time="0.002">
+                                                 
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="nullable should recognize a nullable regex 1" time="0.001">
+                                                 <skipped/>
+                                               </testcase><testcase classname="edu.ucsb.cs.cs162.regex.RegexSpec" name="nullable should recognize a non-nullable regex 1" time="0.0">
+                                                 <skipped/>
                                                </testcase>
                      <system-out><![CDATA[]]></system-out>
                      <system-err><![CDATA[]]></system-err>

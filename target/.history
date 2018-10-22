@@ -5,3 +5,23 @@ test-only edu.ucsb.cs.cs162.regex.RegexSpec
 test-only: edu.ucsb.cs.cs162.regex.RegexSpec
 test-only  edu.ucsb.cs.cs162.regex.RegexSpec*
 testOnly edu.ucsb.cs.cs162.regex.RegexSpec*
+compile
+test
+testOnly edu.ucsb.cs.cs162.regex.RegexSpec*
+test
+testOnly edu.ucsb.cs.cs162.regex.RegexSpec*
+console
+consoleconsole
+console
+test
+compile
+test
+?test
+test
+console
+consol
+console
+test
+consol
+console
+test

@@ -4,25 +4,68 @@
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 1 initial tasks for 1 tests.[0m
 [0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.RegexSpec, sbt.ForkMain$SubclassFingerscan@75b28a65, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mRegexSpec:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31medu.ucsb.cs.cs162.regex.RegexSpec *** ABORTED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:284)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at edu.ucsb.cs.cs162.regex.package$RegexBuilder$.$plus$extension(RichRegex.scala:36)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at edu.ucsb.cs.cs162.regex.RegexSpec.<init>(RegexSpec.scala:16)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.Class.newInstance(Unknown Source)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:435)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at sbt.ForkMain$Run.lambda$runTest$1(ForkMain.java:304)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 905 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 0, aborted 1[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 SUITE ABORTED ***[0m[0m
-[0m[[0m[31merror[0m] [0m[0mError during tests:[0m
+[0m[[0m[0minfo[0m] [0m[0m[32ma regex[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `~`[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `|` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ((a | (b ~ (b)*)) | ∅) did not equal (a | (b ~ (b)*)) (RegexSpec.scala:38)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `*` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (∅)* did not equal ε (RegexSpec.scala:51)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `!` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  !(!((a | (b ~ (b)*)))) did not equal (a | (b ~ (b)*)) (RegexSpec.scala:59)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `&` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (∅ & (a | (b ~ (b)*))) did not equal ∅ (RegexSpec.scala:67)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `^` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ε))))) did not equal (((((a | (b ~ (b)*)) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*))) (RegexSpec.scala:76)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `>=` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ε))) ~ ((a | (b ~ (b)*)))*) did not equal ((((a | (b ~ (b)*)) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*))) ~ ((a | (b ~ (b)*)))*) (RegexSpec.scala:80)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `<=` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (((a | (b ~ (b)*)) | ε) ~ (((a | (b ~ (b)*)) | ε) ~ (((a | (b ~ (b)*)) | ε) ~ ε))) did not equal (((ε | (a | (b ~ (b)*))) | ((a | (b ~ (b)*)) ~ (a | (b ~ (b)*)))) | (((a | (b ~ (b)*)) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*)))) (RegexSpec.scala:84)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `<=>` *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (((a | (b ~ (b)*)) ~ ((a | (b ~ (b)*)) ~ ε)) ~ (((a | (b ~ (b)*)) | ε) ~ (((a | (b ~ (b)*)) | ε) ~ (((a | (b ~ (b)*)) | ε) ~ ε)))) did not equal ((((a | (b ~ (b)*)) ~ (a | (b ~ (b)*))) ~ ((a | (b ~ (b)*)))*) & (((ε | (a | (b ~ (b)*))) | ((a | (b ~ (b)*)) ~ (a | (b ~ (b)*)))) | (((a | (b ~ (b)*)) ~ (a | (b ~ (b)*))) ~ (a | (b ~ (b)*))))) (RegexSpec.scala:88)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using convenience methods 6[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using convenience methods 7 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (b | ε) did not equal (ε | b) (RegexSpec.scala:117)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using convenience methods 8 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  (b ~ (b ~ (b ~ ε))) did not equal ((b ~ b) ~ b) (RegexSpec.scala:121)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using convenience methods 9 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ((b ~ (b ~ ε)) ~ (b)*) did not equal ((b ~ b) ~ (b)*) (RegexSpec.scala:125)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using convenience methods 10 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ((b | ε) ~ ((b | ε) ~ ε)) did not equal ((ε | b) | (b ~ b)) (RegexSpec.scala:129)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using convenience methods 11 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ((b ~ ε) ~ ((b | ε) ~ ((b | ε) ~ ((b | ε) ~ ε)))) did not equal ((b ~ (b)*) & (((ε | b) | (b ~ b)) | ((b ~ b) ~ b))) (RegexSpec.scala:133)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable from strings[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pretty-print correctly *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...nion[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ├─ Union[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  │  ├─ [b[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  │  └─ ε[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  └─ Concatenate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     ├─ Concatenate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     │  ├─ c[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     │  └─ ε][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     └─ KleeneStar[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    ..." did not equal "...nion[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ├─ Union[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  │  ├─ [ε[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  │  └─ b[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  └─ Concatenate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     ├─ c][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m     └─ KleeneStar[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    ..." (RegexSpec.scala:142)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mnullable[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- should recognize a nullable regex 1 (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- should recognize a non-nullable regex 1 (pending)[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 24 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 133 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 22[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 8, failed 14, canceled 0, ignored 0, pending 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 14 TESTS FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
 [0m[[0m[31merror[0m] [0m[0m	edu.ucsb.cs.cs162.regex.RegexSpec[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m

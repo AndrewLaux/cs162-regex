@@ -1,4 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala:76:48: value & is not a member of edu.ucsb.cs.cs162.regex.Regex[0m
-[0m[[0m[31merror[0m] [0m[0m      case Intersect(re1, re2) => re1.nullable & re2.nullable[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala:32:27: not found: value ->[0m
+[0m[[0m[31merror[0m] [0m[0m      case (Chars(Char(x) -> Char(y)), Chars(a -> b)) if (y == a) => Chars(x -> b)[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala:32:19: object Char is not a case class, nor does it have an unapply/unapplySeq member[0m
+[0m[[0m[31merror[0m] [0m[0m      case (Chars(Char(x) -> Char(y)), Chars(a -> b)) if (y == a) => Chars(x -> b)[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala:32:30: object Char is not a case class, nor does it have an unapply/unapplySeq member[0m
+[0m[[0m[31merror[0m] [0m[0m      case (Chars(Char(x) -> Char(y)), Chars(a -> b)) if (y == a) => Chars(x -> b)[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\RichRegex.scala:32:48: not found: value ->[0m
+[0m[[0m[31merror[0m] [0m[0m      case (Chars(Char(x) -> Char(y)), Chars(a -> b)) if (y == a) => Chars(x -> b)[0m
 [0m[[0m[31merror[0m] [0m[0m                                               ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
