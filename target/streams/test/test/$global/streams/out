@@ -2,13 +2,13 @@
 [0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
 [0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 3 initial tasks for 3 tests.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.derivative.DeriveSpec, sbt.ForkMain$SubclassFingerscan@139723d3, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.derivative.DeriveSpec, sbt.ForkMain$SubclassFingerscan@4f2c7b65, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mDeriveSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mmatches[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[33m- should recognize strings in the language 1 (pending)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[33m- should not recognize strings not in the language 1 (pending)[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 2 events.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.range_set.RangeSetSpec, sbt.ForkMain$SubclassFingerscan@682e8220, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.range_set.RangeSetSpec, sbt.ForkMain$SubclassFingerscan@1d644b8a, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mRangeSetSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32ma range set[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be constructable with arbitrary type-correct inputs 1[0m[0m
@@ -23,7 +23,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should compute set equality correctly[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should handle extreme ranges correctly[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 11 events.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.RegexSpec, sbt.ForkMain$SubclassFingerscan@3d0f5c8b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(edu.ucsb.cs.cs162.regex.RegexSpec, sbt.ForkMain$SubclassFingerscan@414df495, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mRegexSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32ma regex[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `~`[0m[0m
@@ -31,8 +31,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[31m  ((a,c) | (c,f)) did not equal (a,f) (RegexSpec.scala:40)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `*`[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `!`[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- should be buildable using `&` *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  ((a,d) & (c,f)) did not equal (c,d) (RegexSpec.scala:69)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `&`[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `^`[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `>=`[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should be buildable using `<=`[0m[0m
@@ -54,11 +53,11 @@
 [0m[[0m[0minfo[0m] [0m[0m[33m- should recognize a nullable regex 1 (pending)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[33m- should recognize a non-nullable regex 1 (pending)[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 24 events.[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 1 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 560 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 33[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 3, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 31, failed 2, canceled 0, ignored 0, pending 4[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 2 TESTS FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 32, failed 1, canceled 0, ignored 0, pending 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	edu.ucsb.cs.cs162.range_set.RangeSetSpec[0m
 [0m[[0m[0mdebug[0m] [0m[0m	edu.ucsb.cs.cs162.regex.derivative.DeriveSpec[0m

@@ -28,7 +28,7 @@ object `package` {
 //
 // - Derive: pop the top of the operand stack, compute its derivative w.r.t. the
 //   machine's given char, then push the result back on the operand stack.
-// - PushConcatentate: pop the top two elements of the operand stack and push
+// - PushConcatenate: pop the top two elements of the operand stack and push
 //   their concatenation back on.
 // - PushUnion: pop the top two elements of the operand stack and push their
 //   union back on.
@@ -55,11 +55,22 @@ class DerivativeMachine(re: Regex) {
   // Public API.
   //----------------------------------------------------------------------------
 
+  
+
   // Returns true iff 'str' is recognized by 're'.
-  def eval(str: String): Boolean = ???
+  def eval(str: String): Boolean = {
+    val instruct = Seq(PushDerive)
+    return str.foldLeft(re)((currentRe, char) => run(Seq(currentRe), instruct, char)).nullable == ε
+  }
+
+    
+
+    
 
   // Returns the derivative of 're' w.r.t. 'char'.
   def derive(char: Char): Regex = ???
+
+  
 
   //----------------------------------------------------------------------------
   // Private details.
@@ -68,10 +79,32 @@ class DerivativeMachine(re: Regex) {
   // Derives a regular expression from the top of 'operands' w.r.t. 'char'.
   //@annotation.tailrec
   private def run(operands: Seq[Regex], program: Program, char: Char): Regex = {
+
+    //Program completed
     if (program.isEmpty) {
       assert(operands.size == 1)
-      operands.head
+      return operands.head
     }
-    else ???
+
+    //Perform instruction
+    else {
+      val instruct = program.last
+      val newprog = program.init
+
+      //Interpret instructions
+      instruct match{
+
+        //Concatenate
+        case PushConcatenate => {
+          val op1 = operands.last
+          val temp = operands.init
+          val op2 = temp.last
+          val temp2 = temp.init
+          val finalops = temp2 :+ op1~op2
+          return run(finalops, newprog, char)
+        }
+      }
+      
+    }
   }
 }

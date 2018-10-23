@@ -63,6 +63,7 @@ object `package` {
     def & (other: Regex): Regex = (re, other) match {
       case (r, ∅) => ∅
       case (∅, r) => ∅
+      case (Chars(a), Chars(b)) => Chars(a & b)
       case (r, KleeneStar(α)) => r
       case (KleeneStar(α), r) => r
       case (r, s) if (r==s) => r
