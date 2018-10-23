@@ -68,7 +68,7 @@ class DerivativeMachine(re: Regex) {
     
 
   // Returns the derivative of 're' w.r.t. 'char'.
-  def derive(char: Char): Regex = ???
+  def derive(char: Char): Regex = run(Seq(re), Seq(PushDerive), char)
 
   
 
@@ -77,7 +77,7 @@ class DerivativeMachine(re: Regex) {
   //----------------------------------------------------------------------------
 
   // Derives a regular expression from the top of 'operands' w.r.t. 'char'.
-  //@annotation.tailrec
+  @annotation.tailrec
   private def run(operands: Seq[Regex], program: Program, char: Char): Regex = {
 
     //Program completed
@@ -102,6 +102,80 @@ class DerivativeMachine(re: Regex) {
           val temp2 = temp.init
           val finalops = temp2 :+ op1~op2
           return run(finalops, newprog, char)
+        }
+
+        //Derive w.r.t. char
+        case PushDerive => {
+          val op1 = operands.last
+          val temp = operands.init
+
+          //Perform one step of derivation on op1
+          op1 match {
+
+            //Union w.r.t. char
+            case Union(re1, re2) => {
+              val finalops = temp :+ re1
+              val prog2 = newprog :+ PushUnion
+              val prog3 = prog2 :+ PushDerive
+              val prog4 = prog3 :+ PushRe(re2)
+              val finalprog = prog4 :+PushDerive
+              return run(finalops, finalprog, char)
+            }
+
+            //Concatenation
+            case Concatenate(a, b) => {
+              val finalops = temp
+              val prog2 = newprog :+ PushUnion
+              val prog3 = prog2 :+ PushConcatenate
+              val prog4 = prog3 :+ PushRe(b)
+              val prog5 = prog4 :+ PushDerive
+              val prog6 = prog5 :+ PushRe(a)
+              val prog7 = prog6 :+ PushConcatenate
+              val prog8 = prog7 :+ PushDerive
+              val prog9 = prog8 :+ PushRe(b)
+              val prog10 = prog9 :+ PushNullable
+              val finalprog = prog10 :+ PushRe(a)
+              return run(finalops, finalprog, char)
+
+            }
+
+            //KleeneStar w.r.t. char
+            case KleeneStar(r) => {
+              val temp2 = temp :+ KleeneStar(r)
+              val finalops = temp :+ r
+              val prog2 = newprog :+ PushConcatenate
+              val finalprog = prog2 :+ PushDerive
+              return run(finalops, finalprog, char)
+            }
+
+            //Singleton Character w.r.t. char
+            case Chars(c) => if(c.contains(char)) {
+              val finalops = temp :+ EmptyString
+              return run(finalops, newprog, char)
+            }
+
+            //Anyother charset where char is not in the set
+            case Chars(c) =>  {
+              val finalops = temp :+ Chars()
+              return run(finalops, newprog, char)
+            }
+
+            
+            case EmptyString =>  {
+              val finalops = temp :+ Chars()
+              return run(finalops, newprog, char)
+            }
+
+            //Empty lang
+            case ∅ => {
+              val finalops = temp :+ Chars()
+              return run(finalops, newprog, char)
+            }
+
+
+
+          }
+
         }
       }
       
