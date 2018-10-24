@@ -1,21 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\test\scala\RegexSpec.scala:16:35: missing argument list for method + in class any2stringadd[0m
-[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
-[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `+ _` or `+(_)` instead of `+`.[0m
-[0m[[0m[31merror[0m] [0m[0m  val r = Chars('a') | Chars('b').+[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\test\scala\RegexSpec.scala:18:28: missing argument list for method + in class any2stringadd[0m
-[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
-[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `+ _` or `+(_)` instead of `+`.[0m
-[0m[[0m[31merror[0m] [0m[0m  val r2 = Chars('y', 'x').+ ~ r[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\test\scala\RegexSpec.scala:61:23: missing argument list for method + in class any2stringadd[0m
-[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
-[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `+ _` or `+(_)` instead of `+`.[0m
-[0m[[0m[31merror[0m] [0m[0m    !ε should equal(α.+)[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\test\scala\RegexSpec.scala:113:7: missing argument list for method + in class any2stringadd[0m
-[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
-[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `+ _` or `+(_)` instead of `+`.[0m
-[0m[[0m[31merror[0m] [0m[0m    b.+ should equal (Concatenate(b, KleeneStar(b)))[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\test\scala\DeriveSpec.scala:134:31: not found: value r[0m
+[0m[[0m[31merror[0m] [0m[0m    val reg = ((f~o)~c)|(f~(o~r))[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

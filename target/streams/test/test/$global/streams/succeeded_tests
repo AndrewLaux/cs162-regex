@@ -1,4 +1,5 @@
 #Successful Tests
-#Mon Oct 22 16:03:36 PDT 2018
-edu.ucsb.cs.cs162.range_set.RangeSetSpec=1540249416124
-edu.ucsb.cs.cs162.regex.derivative.DeriveSpec=1540249416074
+#Wed Oct 24 10:41:58 PDT 2018
+edu.ucsb.cs.cs162.regex.RegexSpec=1540402918728
+edu.ucsb.cs.cs162.range_set.RangeSetSpec=1540402918763
+edu.ucsb.cs.cs162.regex.derivative.DeriveSpec=1540402918844

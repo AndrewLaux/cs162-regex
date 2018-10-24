@@ -94,14 +94,58 @@ class DerivativeMachine(re: Regex) {
       //Interpret instructions
       instruct match{
 
+        //Push Regex
+        case PushRe(x) => {
+          val finalops = operands :+ x
+          return run(finalops, newprog, char)
+        }
+
         //Concatenate
         case PushConcatenate => {
-          val op1 = operands.last
+          assert(operands.size > 1)
+          val op2 = operands.last
           val temp = operands.init
-          val op2 = temp.last
-          val temp2 = temp.init
-          val finalops = temp2 :+ op1~op2
-          return run(finalops, newprog, char)
+          val op1 = temp.last
+          val finalops = temp.init
+          val finalprog = newprog :+ PushRe(op1~op2)
+          return run(finalops, finalprog, char)
+        }
+
+        //Union
+        case PushUnion => {
+          assert(operands.size > 1)
+          val op2 = operands.last
+          val temp= operands.init
+          val op1 = temp.last
+          val finalops = temp.init
+          val finalprog = newprog :+ PushRe(op1|op2)
+          return run(finalops, finalprog, char)
+        }
+
+        //Intersect
+        case PushIntersect => {
+          val op2 = operands.last
+          val temp= operands.init
+          val op1 = temp.last
+          val finalops = temp.init
+          val finalprog = newprog :+ PushRe(op1&op2)
+          return run(finalops, finalprog, char)
+        }
+
+        //Compliment
+        case PushComplement => {
+          val op1 =operands.last
+          val finalops = operands.init
+          val finalprog= newprog :+ PushRe(!op1)
+          return run(finalops, finalprog, char)
+        }
+
+        //Nullable
+        case PushNullable => {
+          val op1 =operands.last
+          val finalops = operands.init
+          val finalprog= newprog :+ PushRe(op1.nullable)
+          return run(finalops, finalprog, char)
         }
 
         //Derive w.r.t. char
@@ -114,11 +158,12 @@ class DerivativeMachine(re: Regex) {
 
             //Union w.r.t. char
             case Union(re1, re2) => {
-              val finalops = temp :+ re1
+              val finalops = temp
               val prog2 = newprog :+ PushUnion
               val prog3 = prog2 :+ PushDerive
               val prog4 = prog3 :+ PushRe(re2)
-              val finalprog = prog4 :+PushDerive
+              val prog5 = prog4 :+ PushDerive
+              val finalprog = prog5 :+ PushRe(re1)
               return run(finalops, finalprog, char)
             }
 
@@ -127,50 +172,70 @@ class DerivativeMachine(re: Regex) {
               val finalops = temp
               val prog2 = newprog :+ PushUnion
               val prog3 = prog2 :+ PushConcatenate
-              val prog4 = prog3 :+ PushRe(b)
-              val prog5 = prog4 :+ PushDerive
-              val prog6 = prog5 :+ PushRe(a)
-              val prog7 = prog6 :+ PushConcatenate
-              val prog8 = prog7 :+ PushDerive
+              val prog4 = prog3 :+ PushDerive
+              val prog5 = prog4 :+ PushRe(b)
+              val prog6 = prog5 :+ PushNullable
+              val prog7 = prog6 :+ PushRe(a)
+              val prog8 = prog7 :+ PushConcatenate
               val prog9 = prog8 :+ PushRe(b)
-              val prog10 = prog9 :+ PushNullable
+              val prog10 = prog9 :+ PushDerive
               val finalprog = prog10 :+ PushRe(a)
               return run(finalops, finalprog, char)
+            }
 
+            //Intersection
+            case Intersect(a, b) => {
+              val finalops = temp
+              val prog2 = newprog :+ PushIntersect
+              val prog3 = prog2 :+ PushDerive
+              val prog4 = prog3 :+ PushRe(b)
+              val prog5 = prog4 :+ PushDerive
+              val finalprog = prog5 :+ PushRe(a)
+              return run(finalops, finalprog, char)
             }
 
             //KleeneStar w.r.t. char
             case KleeneStar(r) => {
-              val temp2 = temp :+ KleeneStar(r)
-              val finalops = temp :+ r
+              val finalops = temp
               val prog2 = newprog :+ PushConcatenate
-              val finalprog = prog2 :+ PushDerive
+              val prog3 = prog2 :+ PushRe(op1)
+              val prog4 = prog3 :+ PushDerive
+              val finalprog = prog4 :+ PushRe(r)
               return run(finalops, finalprog, char)
             }
 
+            //Compliment
+            case Complement(r) => {
+              val finalops = temp
+              val prog2 = newprog :+ PushComplement
+              val prog3 = prog2 :+ PushDerive
+              val finalprog = prog3 :+ PushRe(r)
+              return run(finalops, finalprog, char)
+            }
+
+            //Empty lang
+            case `∅` => {
+              val finalops = temp :+ Chars()
+              return run(finalops, newprog, char)
+            }
             //Singleton Character w.r.t. char
-            case Chars(c) => if(c.contains(char)) {
+            case Chars(c) if(c.contains(char)) => {
               val finalops = temp :+ EmptyString
               return run(finalops, newprog, char)
             }
 
             //Anyother charset where char is not in the set
-            case Chars(c) =>  {
+            case Chars(c) if(!c.contains(char)) => {
               val finalops = temp :+ Chars()
               return run(finalops, newprog, char)
             }
 
-            
+            //The Emptystring
             case EmptyString =>  {
               val finalops = temp :+ Chars()
               return run(finalops, newprog, char)
             }
 
-            //Empty lang
-            case ∅ => {
-              val finalops = temp :+ Chars()
-              return run(finalops, newprog, char)
-            }
 
 
 

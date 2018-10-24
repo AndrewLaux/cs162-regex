@@ -29,3 +29,53 @@ console
 test
 consol
 console
+test
+console
+test
+compile
+console
+conole
+console
+:
+console
+compile
+test
+compile
+test
+compile
+test
+testtest
+test
+compile
+test
+compile
+test
+it should "recognize strings in the language 4" in { 
+    val reg = ((f~o)~c)|(f~(o~d))
+    val str = "fod"
+    val D = new DerivativeMachine(reg)
+    val recognize = D.eval(str) should equal(true)
+  }it should "recognize strings in the language 4" in { 
+    val reg = ((f~o)~c)|(f~(o~d))
+    val str = "fod"
+    val D = new DerivativeMachine(reg)
+    val recognize = D.eval(str) should equal(true)
+ 
+test
+it should "recognize strings in the language 5" in { 
+    val reg = (f|c).*
+    val str = "ffcf"
+    val D = new DerivativeMachine(reg)
+    val recognize = D.eval(str) should equal(true)
+  }it should "recognize strings in the language 5" in { 
+    val reg = (f|c).*
+    val str = "ffcf"
+    val D = new DerivativeMachine(reg)
+    val recognize = D.eval(str) should equal(true)
+  }it should "recognize strings in the language 5" in { 
+    val reg = (f|c).*
+    val str = "ffcf"
+    val D = new DerivativeMachine(reg)
+    val recognize = D.eval(str) should equal(true)
+ 
+test

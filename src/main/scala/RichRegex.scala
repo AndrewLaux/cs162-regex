@@ -14,36 +14,36 @@ object `package` {
 
     // Concatenate 're' with 'other', simplifying if possible (assumes that 're'
     // and 'other' have already been simplified).
-    def ~(other: Regex): Regex = 
-      if (re == ∅ || other == ∅) return ∅ 
-      else if (re == ε) return other
-      else if (other == ε) return re
-      else return Concatenate(re, other)
+    def ~(other: Regex): Regex = (re, other) match {
+      case (∅, r) => return ∅
+      case (r, ∅) => return ∅
+      case (r, `ε`) => return re
+      case (`ε`, r) => return other
+      case (r, s) => Concatenate(r, s)
+    }
+      // if (re == ∅ || other == ∅) return ∅ 
+      // else if (re == ε) return other
+      // else if (other == ε) return re
+      // else return Concatenate(re, other)
 
     // Union 're' with 'other', simplifying if possible (assumes that 're' and
     // 'other' have already been simplified).
      def |(other: Regex): Regex = (re, other) match {
       case (r, ∅) => r
       case (∅, r) => r
-      case (KleeneStar(r), ε) => KleeneStar(r)
-      case (ε, KleeneStar(r)) => KleeneStar(r)
+      case (Chars(a), Chars(b)) => Chars(a ++ b)
+      case (KleeneStar(r), `ε`) => KleeneStar(r)
+      case (`ε`, KleeneStar(r)) => KleeneStar(r)
       case (KleeneStar(α), r) => KleeneStar(α)
       case (r, KleeneStar(α)) => KleeneStar(α)
       case (r1, r2) if r1 == r2 => r1
       case (r1, r2) => Union(r1, r2)
     }
- 
-      
-      // if (re == ∅) return other
-      // else if(other == ∅) return re
-      // else if(re == _* && other == ε) return re
-      // else if(other == _* && re == ε) return other
-      // else return Union(re, other)
 
     // Apply the Kleene star to 're', simplifying if possible (assumes that 're'
     // has already been simplified).
     def * : Regex = re match {
-      case ∅ => ε
+      case ∅ => `ε`
       case EmptyString => EmptyString
       case KleeneStar(r) => KleeneStar(r)
       case r => KleeneStar(r)
@@ -53,7 +53,7 @@ object `package` {
     // been simplified).
     def unary_! : Regex = re match {
       case ∅ => KleeneStar(α)
-      case ε if(ε == EmptyString) => α.+
+      case `ε` if(ε == EmptyString) => α.+
       case Complement(r) => r
       case r => Complement(r)
     }
