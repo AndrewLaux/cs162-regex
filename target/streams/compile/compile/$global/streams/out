@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\DerivativeMachine.scala:207:18: not found: value Compliment[0m
-[0m[[0m[31merror[0m] [0m[0m            case Compliment(r) => {[0m
-[0m[[0m[31merror[0m] [0m[0m                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\DerivativeMachine.scala:110:35: value last is not a member of edu.ucsb.cs.cs162.regex.Regex[0m
+[0m[[0m[31merror[0m] [0m[0m          val op1 = operands.last.last[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Castle\Documents\Classes\cs162\cs162-regex\src\main\scala\DerivativeMachine.scala:112:36: value inti is not a member of Seq[edu.ucsb.cs.cs162.regex.Regex][0m
+[0m[[0m[31merror[0m] [0m[0m          return run(operands.init.inti, finalprog, char)[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

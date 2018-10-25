@@ -79,3 +79,5 @@ it should "recognize strings in the language 5" in {
     val recognize = D.eval(str) should equal(true)
  
 test
+testtest
+test

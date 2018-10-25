@@ -96,8 +96,7 @@ class DerivativeMachine(re: Regex) {
 
         //Push Regex
         case PushRe(x) => {
-          val finalops = operands :+ x
-          return run(finalops, newprog, char)
+          return run(operands :+ x, newprog, char)
         }
 
         //Concatenate
@@ -158,59 +157,63 @@ class DerivativeMachine(re: Regex) {
 
             //Union w.r.t. char
             case Union(re1, re2) => {
-              val finalops = temp
-              val prog2 = newprog :+ PushUnion
-              val prog3 = prog2 :+ PushDerive
-              val prog4 = prog3 :+ PushRe(re2)
-              val prog5 = prog4 :+ PushDerive
-              val finalprog = prog5 :+ PushRe(re1)
-              return run(finalops, finalprog, char)
+              val seq = Seq( PushUnion,
+              PushDerive,
+              PushRe(re2),
+              PushDerive,
+              PushRe(re1)
+              )
+              return run(temp, newprog ++ seq, char)
             }
 
             //Concatenation
             case Concatenate(a, b) => {
-              val finalops = temp
-              val prog2 = newprog :+ PushUnion
-              val prog3 = prog2 :+ PushConcatenate
-              val prog4 = prog3 :+ PushDerive
-              val prog5 = prog4 :+ PushRe(b)
-              val prog6 = prog5 :+ PushNullable
-              val prog7 = prog6 :+ PushRe(a)
-              val prog8 = prog7 :+ PushConcatenate
-              val prog9 = prog8 :+ PushRe(b)
-              val prog10 = prog9 :+ PushDerive
-              val finalprog = prog10 :+ PushRe(a)
-              return run(finalops, finalprog, char)
+              val seq = Seq(
+                PushUnion,
+                PushConcatenate,
+                PushDerive,
+                PushRe(b),
+                PushNullable,
+                PushRe(a),
+                PushConcatenate,
+                PushRe(b),
+                PushDerive,
+                PushRe(a)
+              )
+              return run(temp, newprog ++ seq, char)
             }
 
             //Intersection
             case Intersect(a, b) => {
-              val finalops = temp
-              val prog2 = newprog :+ PushIntersect
-              val prog3 = prog2 :+ PushDerive
-              val prog4 = prog3 :+ PushRe(b)
-              val prog5 = prog4 :+ PushDerive
-              val finalprog = prog5 :+ PushRe(a)
-              return run(finalops, finalprog, char)
+              val seq = Seq(
+                PushIntersect,
+                PushDerive,
+                PushRe(b),
+                PushDerive,
+                PushRe(a)
+              )
+              return run(temp, newprog ++ seq, char)
             }
 
             //KleeneStar w.r.t. char
             case KleeneStar(r) => {
-              val finalops = temp
-              val prog2 = newprog :+ PushConcatenate
-              val prog3 = prog2 :+ PushRe(op1)
-              val prog4 = prog3 :+ PushDerive
-              val finalprog = prog4 :+ PushRe(r)
-              return run(finalops, finalprog, char)
+              val seq = Seq(
+                PushConcatenate,
+                PushRe(op1),
+                PushDerive,
+                PushRe(r)
+              )
+              return run(temp, newprog ++ seq, char)
             }
 
             //Compliment
             case Complement(r) => {
-              val finalops = temp
-              val prog2 = newprog :+ PushComplement
-              val prog3 = prog2 :+ PushDerive
-              val finalprog = prog3 :+ PushRe(r)
-              return run(finalops, finalprog, char)
+              val seq = Seq(
+                PushComplement,
+                PushDerive,
+                PushRe(r)
+              )
+              return run(temp, newprog ++ seq, char)
             }
 
             //Empty lang
